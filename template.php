@@ -22,13 +22,13 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a>
                           
 
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">family</a>
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">friends</a>
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="#">coworkers</a>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/family.php">family</a>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/friends.php">friends</a>
+<li class="nav-item"><a class="nav-link active" aria-current="page" href="/coworkers.php">coworkers</a>
 
 
                           
-                          <a class="nav-link active" aria-current="page" href="#">Friends</a></li>
+                         
                         <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
