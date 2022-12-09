@@ -1,4 +1,6 @@
+<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php';?>
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -22,9 +24,7 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a>
                           
 
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="/family.php">family</a>
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="/friends.php">friends</a>
-<li class="nav-item"><a class="nav-link active" aria-current="page" href="/coworkers.php">coworkers</a>
+<?php echo $mainNav ?>
 
 
                           
