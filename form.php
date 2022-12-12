@@ -1,4 +1,4 @@
-form action="process-form.php">
+<form action="redirectForm.php">
    <label for="first-name">First Name:</label><br>
    <input type="text" id="first-name" name="first-name"><br>
 
