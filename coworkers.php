@@ -1,11 +1,13 @@
+<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php';?>
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Bare - Start Bootstrap Template</title>
+        <title><?php echo $siteName ?></title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -22,7 +24,7 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="/index.php">Home</a>
                           
 
-<?php echo $mainNav ?>
+<?php echo $navigation ?>
 
 
                           
