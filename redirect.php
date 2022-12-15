@@ -1,4 +1,6 @@
 <?php 
+header('Location: /index.php');
+
 $firstName = $_POST['first-name'];
 $lastName = $_POST['last-name'];
 $email = $_POST['email'];
@@ -21,7 +23,7 @@ $formDataJson = json_encode($formData);
 file_put_contents('data.json', $formDataJson);
 
 // Output a message to the user
-echo "Form data has been saved to form-data.json";
+
 
 
 
