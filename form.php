@@ -1,4 +1,6 @@
-<form action="/redirectForm.php">
+<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php';?>
+
+<form action="/redirect.php">
    <label for="first-name">First Name:</label><br>
    <input type="text" id="first-name" name="first-name"><br>
 

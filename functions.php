@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 $navigation = "
 <li class='nav-item'><a class='nav-link active' aria-current='page' href='/family.php'>family</a>
