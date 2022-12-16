@@ -1,18 +1,18 @@
 <?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
 
-$_SESSION["contactMeForm"]["fName"] = $_POST['fName'];
-$_SESSION["contactMeForm"]["lName"] = $_POST['lName'];
-$_SESSION["contactMeForm"]["email"] = $_POST['email'];
-$_SESSION["contactMeForm"]["reason"] = $_POST['reason'];
-$_SESSION["contactMeForm"]["message"] = $_POST['message'];
+$_SESSION["Form"]["first-name"] = $_POST['first-name'];
+$_SESSION["Form"]["last-name"] = $_POST['last-name'];
+$_SESSION["Form"]["email"] = $_POST['email'];
+$_SESSION["Form"]["reason"] = $_POST['reason'];
+$_SESSION["Form"]["message"] = $_POST['message'];
 
 $newFormData = array(
                   "date"=>date("m/d/Y"),
-                  "fName"=> $_SESSION['contactMeForm']['first-name'], 
-                  "lName"=> $_SESSION['contactMeForm']['last-name'],
-                  "email"=> $_SESSION['contactMeForm']['email'],
-                  "phone-number"=> $_SESSION['contactMeForm']['phone-number'],
-                  "relationship-status"=> $_SESSION['contactMeForm']['relationship-statusjsonDatat ']
+                  "fName"=> $_SESSION['Form']['first-name'], 
+                  "lName"=> $_SESSION['Form']['last-name'],
+                  "email"=> $_SESSION['Form']['email'],
+                  "phone-number"=> $_SESSION['Form']['phone-number'],
+                  "relationship-status"=> $_SESSION['Form']['relationship-statusjsonData ']
   );
 
 
