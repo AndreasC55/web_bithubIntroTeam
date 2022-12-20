@@ -57,30 +57,33 @@
         <script src="js/scripts.js"></script>
 
 
+<?php
+
+$data = json_decode('{"firstName":"barrack","lastName":"obama","email":"355664@guhsd.net","phoneNumber":"6197789827","relationshipStatus":"Coworker"}', true);
 
 
-
+$firstName = $data['firstName'];
+$lastName = $data['lastName'];
+$email = $data['email'];
+$phoneNumber = $data['phoneNumber'];
+?>
 
       <table id="example" class="table table-striped" style="width:50%; margin:0 auto;">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>phone number</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
-            </tr>
+           <?php echo "<tr> 
+  <td>$firstName</td>
+  <td>$lastName</td>
+  <td>$email</td>
+  <td>$phoneNumber</td>
+</tr>"; ?>
       </tr>
         </tbody>
         <tfoot>
