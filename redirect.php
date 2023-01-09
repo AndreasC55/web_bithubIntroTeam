@@ -1,34 +1,36 @@
-<?php 
+<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php'; 
+
+$_SESSION["form"]["first-name"] = $_POST['first-name'];
+$_SESSION["form"]["last-name"] = $_POST['last-name'];
+$_SESSION["form"]["email"] = $_POST['email'];
+$_SESSION["form"]["phone-number"] = $_POST['phone-number'];
+$_SESSION["form"]["relationship-status"] = $_POST['relationship-status'];
+
+
+$newFormData = array(
+                  "date"=>date("m/d/Y"),
+                  "fName"=> $_SESSION['form']['first-name'],
+                  "lName"=> $_SESSION['form']['last-name'],
+                  "email"=> $_SESSION['form']['email'],
+                  "phone-number"=> $_SESSION['form']['phone-number'],
+                  "relationship-status"=> $_SESSION['form']['relationship-status']
+  );
+
+
+
+
+  $jsonFormData = file_get_contents( $_SERVER['DOCUMENT_ROOT'].'/data.json');
+
+  $pastFormData = json_decode($jsonFormData,TRUE);
+ 
+array_push($pastFormData, $newFormData);
+
+$jsonData = json_encode($pastFormData);
+
+file_put_contents( $_SERVER['DOCUMENT_ROOT'].'/data.json', $jsonData);
+  
+
 header('Location: /index.php');
-
-$firstName = $_POST['first-name'];
-$lastName = $_POST['last-name'];
-$email = $_POST['email'];
-$phoneNumber = $_POST['phone-number'];
-$relationshipStatus = $_POST['relationship-status'];
-
-// Create an array to hold the form data
-$formData = [
-    'firstName' => $firstName,
-    'lastName' => $lastName,
-    'email' => $email,
-    'phoneNumber' => $phoneNumber,
-    'relationshipStatus' => $relationshipStatus,
-];
-
-// Encode the array as a JSON string
-$formDataJson = json_encode($formData);
-
-// Save the JSON string to a file
-file_put_contents('data.json', $formDataJson);
-
-// Output a message to the user
-
-
-
-
-
 
 
 ?>
-
