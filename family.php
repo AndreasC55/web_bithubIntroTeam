@@ -51,45 +51,49 @@
                 <p>Bootstrap v5.1.3</p>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+      <?php
+//json file get contents starts here
+$data_json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/data.json');
+//json file get contents ends here
+$decoded_json = json_decode($data_json, false);
 
 
-<?php
-
-$data = json_decode('{"firstName":"barrack","lastName":"obama","email":"355664@guhsd.net","phoneNumber":"6197789827","relationshipStatus":"Coworker"}', true);
-
-
-$firstName = $data['firstName'];
-$lastName = $data['lastName'];
-$email = $data['email'];
-$phoneNumber = $data['phoneNumber'];
+// table starts here
 ?>
-
-      <table id="example" class="table table-striped" style="width:50%; margin:0 auto;">
+<table id='example' class='table table-striped' style='width:50%; margin:0 auto;'>
         <thead>
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>email</th>
-                <th>phone number</th>
+                <th>Phone number</th>
+                <th>Relationship status</th>
+                
             </tr>
         </thead>
         <tbody>
-           <?php echo "<tr> 
-  <td>$firstName</td>
-  <td>$lastName</td>
-  <td>$email</td>
-  <td>$phoneNumber</td>
-</tr>"; ?>
+            <tr>
+                <td><?php echo $decoded_json->firstName; ?></td>
+                <td><?php echo $decoded_json->lastName; ?></td>
+                <td><?php echo $decoded_json->email; ?></td>
+                <td><?php echo $decoded_json->phoneNumber; ?></td>
+                <td>Family</td>
+            </tr>
       </tr>
         </tbody>
         <tfoot>
             
         </tfoot>
-    </table>
-      
+    </table> 
+
+
+
+
+?>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>

@@ -51,49 +51,49 @@
                 <p>Bootstrap v5.1.3</p>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+      <?php
+//json file get contents starts here
+$data_json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/data.json');
+//json file get contents ends here
+$decoded_json = json_decode($data_json, false);
 
 
-
-
-
-
-
-
-
-
-
-
-<table id="example" class="table table-striped" style="width:50%; margin:0 auto;">
+// table starts here
+?>
+<table id='example' class='table table-striped' style='width:50%; margin:0 auto;'>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>Phone number</th>
+                <th>Relationship status</th>
+                
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
+                <td><?php echo $decoded_json->firstName; ?></td>
+                <td><?php echo $decoded_json->lastName; ?></td>
+                <td><?php echo $decoded_json->email; ?></td>
+                <td><?php echo $decoded_json->phoneNumber; ?></td>
+                <td>Coworker</td>
             </tr>
       </tr>
         </tbody>
         <tfoot>
             
         </tfoot>
-    </table>
+    </table> 
 
-      
+
+
+
+?>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
