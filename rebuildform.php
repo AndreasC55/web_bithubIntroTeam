@@ -46,55 +46,38 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>Family</h1>
-                <p class="lead">This page will hold the contact information for your family members.</p>
-                <p>Bootstrap v5.1.3</p>
+                <h1>Form</h1>
+                <p class="lead">Fill out the form</p>
+                <p>Made with Bootstrap v5.1.3</p>
             </div>
         </div>
 
-      <?php
-//json file get contents starts here
-$data_json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/data.json');
-//json file get contents ends here
-$decoded_json = json_decode($data_json, false);
+       <center>
+        <form action="/redirect.php" method="post">
+   <label for="first-name">First Name:</label><br>
+   <input type="text" id="first-name" name="first-name"><br>
 
+   <label for="last-name">Last Name:</label><br>
+   <input type="text" id="last-name" name="last-name"><br>
 
-// table starts here
-?>
-<table id='example' class='table table-striped' style='width:50%; margin:0 auto;'>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>email</th>
-                <th>Phone number</th>
-                <th>Relationship status</th>
-              <th>contact ID</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-          <?php if($decoded_json->relationshipStatus == "Family"){ ?>
-            <tr>
-                <td><?php echo $decoded_json->firstName; ?></td>
-                <td><?php echo $decoded_json->lastName; ?></td>
-                <td><?php echo $decoded_json->email; ?></td>
-                <td><?php echo $decoded_json->phoneNumber; ?></td>
-                <td><?php echo $decoded_json->relationshipStatus; ?></td>
-              <td><?php echo uniqid(); ?></td>
-              
-            </tr>
-          <?php } ?>
-        </tbody>
-        <tfoot>
-            
-        </tfoot>
-    </table> 
+   <label for="email">Email:</label><br>
+   <input type="email" id="email" name="email"><br>
 
+   <label for="phone-number">Phone Number:</label><br>
+   <input type="tel" id="phone-number" name="phone-number"><br>
 
+   <label for="relationship-status">Relationship Status:</label><br>
+   <select id="relationship-status" name="relationship-status">
+      <option value="Friend">Friend</option>
+      <option value="Family">Family</option>
+      <option value="Coworker">Coworker</option>
+   </select><br>
+<input type="submit" value="Submit">
+</form>
+<br><br>
 
-
-?>
+  <?php echo $_GET ['uid'];? ?>
+      </center>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
