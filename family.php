@@ -46,8 +46,8 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>A Bootstrap 5 Starter Template</h1>
-                <p class="lead">A complete project boilerplate built with Bootstrap</p>
+                <h1>Family</h1>
+                <p class="lead">This page will hold the contact information for your family members.</p>
                 <p>Bootstrap v5.1.3</p>
             </div>
         </div>
@@ -73,14 +73,15 @@ $decoded_json = json_decode($data_json, false);
             </tr>
         </thead>
         <tbody>
+          <?php if($decoded_json->relationshipStatus == "Family"){ ?>
             <tr>
                 <td><?php echo $decoded_json->firstName; ?></td>
                 <td><?php echo $decoded_json->lastName; ?></td>
                 <td><?php echo $decoded_json->email; ?></td>
                 <td><?php echo $decoded_json->phoneNumber; ?></td>
-                <td>Family</td>
+                <td><?php echo $decoded_json->relationshipStatus; ?></td>
             </tr>
-      </tr>
+          <?php } ?>
         </tbody>
         <tfoot>
             
