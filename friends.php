@@ -46,46 +46,55 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>A Bootstrap 5 Starter Template</h1>
-                <p class="lead">A complete project boilerplate built with Bootstrap</p>
+                <h1>Friends</h1>
+                <p class="lead">This page will hold the contact information for your friends.</p>
                 <p>Bootstrap v5.1.3</p>
             </div>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+      <?php
+//json file get contents starts here
+$data_json = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/data.json');
+//json file get contents ends here
+$decoded_json = json_decode($data_json, false);
 
 
-
-
-      <table id="example" class="table table-striped" style="width:50%; margin:0 auto;">
+// table starts here
+?>
+<table id='example' class='table table-striped' style='width:50%; margin:0 auto;'>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Salary</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>email</th>
+                <th>Phone number</th>
+                <th>Relationship status</th>
+                
             </tr>
         </thead>
         <tbody>
+          <?php if($decoded_json->relationshipStatus == "Friend"){ ?>
             <tr>
-                <td>Tiger Nixon</td>
-                <td>System Architect</td>
-                <td>Edinburgh</td>
-                <td>61</td>
-                <td>2011-04-25</td>
-                <td>$320,800</td>
+                <td><?php echo $decoded_json->firstName; ?></td>
+                <td><?php echo $decoded_json->lastName; ?></td>
+                <td><?php echo $decoded_json->email; ?></td>
+                <td><?php echo $decoded_json->phoneNumber; ?></td>
+                <td><?php echo $decoded_json->relationshipStatus; ?></td>
             </tr>
-      </tr>
+          <?php } ?>
         </tbody>
         <tfoot>
             
         </tfoot>
-    </table>
+    </table> 
 
-      
+
+
+
+?>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </body>
 </html>
