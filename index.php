@@ -72,8 +72,12 @@
       <option value="Family">Family</option>
       <option value="Coworker">Coworker</option>
    </select><br>
+          
+   <input type="hidden" name="UID" value="<?php echo uniqid(); ?>" id="UI">
+          
 <input type="submit" value="Submit">
 </form>
+
 
       </center>
         <!-- Bootstrap core JS-->
