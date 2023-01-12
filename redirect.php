@@ -6,6 +6,7 @@ $lastName = $_POST['last-name'];
 $email = $_POST['email'];
 $phoneNumber = $_POST['phone-number'];
 $relationshipStatus = $_POST['relationship-status'];
+$UID = $_POST['UID'];
 
 // Create an array to hold the form data
 $formData = [
@@ -14,6 +15,7 @@ $formData = [
     'email' => $email,
     'phoneNumber' => $phoneNumber,
     'relationshipStatus' => $relationshipStatus,
+  'UID' => $UID,
 ];
 
 // Encode the array as a JSON string
@@ -23,8 +25,6 @@ $formDataJson = json_encode($formData);
 file_put_contents('data.json', $formDataJson);
 
 // Output a message to the user
-
-
 
 
 

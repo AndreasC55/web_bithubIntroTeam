@@ -81,7 +81,8 @@ $decoded_json = json_decode($data_json, false);
                 <td><?php echo $decoded_json->email; ?></td>
                 <td><?php echo $decoded_json->phoneNumber; ?></td>
                 <td><?php echo $decoded_json->relationshipStatus; ?></td>
-              <td><?php echo uniqid(); ?></td>
+              <td><?php echo $decoded_json->UID; ?></td>
+              <td><a href='edit.php';>Edit</a></td>
               
             </tr>
           <?php } ?>

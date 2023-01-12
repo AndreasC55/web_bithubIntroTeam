@@ -69,17 +69,21 @@ $decoded_json = json_decode($data_json, false);
                 <th>email</th>
                 <th>Phone number</th>
                 <th>Relationship status</th>
+              <th>contact ID</th>
                 
             </tr>
         </thead>
         <tbody>
           <?php if($decoded_json->relationshipStatus == "Friend"){ ?>
-            <tr>
+           <tr>
                 <td><?php echo $decoded_json->firstName; ?></td>
                 <td><?php echo $decoded_json->lastName; ?></td>
                 <td><?php echo $decoded_json->email; ?></td>
                 <td><?php echo $decoded_json->phoneNumber; ?></td>
                 <td><?php echo $decoded_json->relationshipStatus; ?></td>
+              <td><?php echo $decoded_json->UID; ?></td>
+             <td><a href='edit.php';>Edit</a></td>
+              
             </tr>
           <?php } ?>
         </tbody>
