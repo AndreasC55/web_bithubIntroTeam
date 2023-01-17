@@ -1,8 +1,24 @@
+<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php';
+$data = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/data.json');
+ $data = json_decode($data, TRUE);
 
+$firstName = $_POST['first-name'];
+$lastName = $_POST['last-name'];
+$email = $_POST['email'];
+$phoneNumber = $_POST['phone-number'];
+$relationshipStatus = $_POST['relationship-status'];
+$UID = $_POST['UID'];
 
-
-
-<?php include $_SERVER['DOCUMENT_ROOT'].'/functions.php';?>
+// Create an array to hold the form data
+$formData = [
+    'firstName' => $firstName,
+    'lastName' => $lastName,
+    'email' => $email,
+    'phoneNumber' => $phoneNumber,
+    'relationshipStatus' => $relationshipStatus,
+  'UID' => $UID,
+];
+  ?>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -51,49 +67,13 @@
         <div class="container">
             <div class="text-center mt-5">
                 <h1>A Bootstrap 5 Starter Template</h1>
-                <p class="lead">Edit your information here</p>
-                <p>made with Bootstrap v5.1.3</p>
+                <p class="lead">A complete project boilerplate built with Bootstrap</p>
+                <p>Bootstrap v5.1.3</p>
             </div>
         </div>
-<center>
-<form method="post" action="editredirect.php">
-    <label>First Name: <input type="text" name="firstName" value="<?php echo isset($data['firstName']) ? $data['firstName'] : ''; ?>"></label><br>
-    <label>Last Name: <input type="text" name="lastName" value="<?php echo isset($data['lastName']) ? $data['lastName'] : ''; ?>"></label><br>
-    <label>Email: <input type="email" name="email" value="<?php echo isset($data['email']) ? $data['email'] : ''; ?>"></label><br>
-    <label>Phone Number: <input type="tel" name="phoneNumber" value="<?php echo isset($data['phoneNumber']) ? $data['phoneNumber'] : ''; ?>"></label><br>
-    <label>Relationship Status: <input type="text" name="relationshipStatus" value="<?php echo isset($data['relationshipStatus']) ? $data['relationshipStatus'] : ''; ?>"></label><br>
-    
-    
-    <input type="submit" value="Save">
-</form>
-</center>
-<center> <p> Note: for the form to accept your edit, the first letter of your relationship status should be capitalized. (example: Family)</p> 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
